@@ -1,2 +1,2 @@
 # beamer-ucsandiego
-Template beamer and style with UC San Diego colors and graphics.
+This is an unofficial template. Guidelines taken from the [UC San Diego Brand](http://ucpa.ucsd.edu/brand/).
