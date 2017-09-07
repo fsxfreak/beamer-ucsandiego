@@ -1,0 +1,110 @@
+% Created 2010 by Sarah Merz <smerz@pacific.edu>
+% Modified 2017 by Leon Cheung <ljcheung at ucsd.edu>
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+
+% \orangebox{text1}{text2} creates a theorem-like box
+% similarly use \greenbox, \bluebox, \graybox
+
+\mode<presentation>
+
+\useoutertheme{split}
+\useinnertheme{rectangles}
+
+% Navigation bar. Comment out for pdf distribution.
+\beamertemplatenavigationsymbolsempty
+
+\definecolor{pacificcream}{cmyk}{.05,.05,.15,0}
+
+\definecolor{ucsdblack}{RGB}{24,43,73}
+\definecolor{ucsdblue}{RGB}{0,106,150}
+\definecolor{ucsdorange}{RGB}{198,146,20}
+\definecolor{ucsdgold}{RGB}{255,205,0}
+
+\definecolor{ucsdblue-acc}{RGB}{0,198,215}
+\definecolor{ucsdgreen-acc}{RGB}{110,150,59}
+\definecolor{ucsdorange-acc}{RGB}{252,137,0}
+\definecolor{ucsdgold-acc}{RGB}{243,229,0}
+
+\definecolor{ucsdneutral}{RGB}{182,177,169}
+\definecolor{ucsdgray}{RGB}{116,118,120}
+
+\usecolortheme{whale}
+\usecolortheme[named=ucsdblue]{structure}
+
+\setbeamercolor{alerted text}{fg=ucsdorange-acc}
+\setbeamercolor{palette primary}{bg=ucsdblue,fg=white}
+\setbeamercolor{palette secondary}{fg=ucsdblack,bg=ucsdgold}
+%\setbeamercolor{palette secondary}{fg=white,bg=ucsdneutral}
+\setbeamercolor{palette tertiary}{fg=white,bg=ucsdgray}
+\setbeamercolor{palette quaternary}{fg=ucsdblack,bg=ucsdgold} % outertheme: split
+\setbeamercolor{structure}{fg=ucsdblue,bg=white}
+\setbeamercolor{frametitle}{bg=ucsdblue-acc,fg=white}
+\setbeamercolor{normal text}{fg=ucsdblack}
+
+\setbeamerfont{block title}{size={}}
+
+\newcommand{\orangebox}[2]{
+\setbeamercolor{uppercol}{fg=white,bg=ucsdorange}
+\setbeamercolor{lowercol}{fg=ucsdblack,bg=pacificcream}
+
+\begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=true]{
+#1 }  #2
+\end{beamerboxesrounded} }
+
+
+\newcommand{\greenbox}[2]{
+\setbeamercolor{uppergrn}{fg=white,bg=ucsdgreen-acc}
+\setbeamercolor{lowercol}{fg=ucsdblack,bg=pacificcream}
+
+\begin{beamerboxesrounded}[upper=uppergrn,lower=lowercol,shadow=true]{
+#1 }  #2
+\end{beamerboxesrounded} }
+
+\newcommand{\bluebox}[2]{
+\setbeamercolor{upperblue}{fg=white,bg=ucsdblue}
+\setbeamercolor{lowercol}{fg=ucsdblack,bg=pacificcream}
+
+\begin{beamerboxesrounded}[upper=upperblue,lower=lowercol,shadow=true]{
+#1 }  #2
+\end{beamerboxesrounded} }
+
+\newcommand{\graybox}[2]{
+\setbeamercolor{uppergray}{fg=white,bg=ucsdgray}
+\setbeamercolor{lowercol}{fg=ucsdblack,bg=pacificcream}
+
+\begin{beamerboxesrounded}[upper=uppergray,lower=lowercol,shadow=true]{
+#1 }  #2
+\end{beamerboxesrounded} }
+
+\newcommand{\grassgreenbox}[2]{
+\setbeamercolor{uppergrass}{fg=white,bg=grassgreen}
+\setbeamercolor{lowercol}{fg=ucsdblack,bg=pacificcream}
+
+\begin{beamerboxesrounded}[upper=uppergrass,lower=lowercol,shadow=true]{
+#1 }  #2
+\end{beamerboxesrounded} }
+
+% prefer circle bullets instead of balls in table of contents
+\setbeamertemplate{section in toc}[circle]
+
+\newenvironment{orangeitemize}{\setbeamertemplate{itemize item}{$\bullet$}\begin{itemize}}{\end{itemize}}
+\newenvironment{grassgreenitemize}{\setbeamertemplate{itemize item}{\textcolor{grassgreen}{$\bullet$}} \begin{itemize}}{\end{itemize}}
+\newenvironment{blackitemize}{\setbeamertemplate{itemize item}{\textcolor{black}{$\bullet$}} \begin{itemize}}{\end{itemize}}
+
+% use figure numbers
+\setbeamertemplate{caption}[numbered]
+
+% slide numbers
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+}
+
+\mode
+<all>

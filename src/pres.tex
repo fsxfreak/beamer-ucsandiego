@@ -1,0 +1,126 @@
+\documentclass{beamer}
+\usetheme{ucsandiego} 
+
+\usepackage{color} 
+\usepackage{graphicx} % external images
+\usepackage[font=small]{caption} % caption numbers
+\usepackage{tikz}
+
+\theoremstyle{definition}
+
+
+
+
+\title{Improving Low-Resource Neural Machine Translation}
+\author{Leon Cheung} 
+\institute{University of California San Diego}
+\date{8 September 2017} % custom date
+
+% Comment this section out to disable table of contents at section begin.
+\AtBeginSection[]
+{
+\begin{frame}
+\frametitle{Contents}
+% This will display the table of contents and highlight the current section.
+\tableofcontents[currentsection] 
+\end{frame}
+}
+
+
+\begin{document}
+
+{
+\usebackgroundtemplate{
+    \tikz[overlay,remember picture]
+    \node[opacity=0.05, at=(current page.south east),anchor=south east,inner sep=0pt] {
+        \includegraphics[height=\paperheight,width=\paperwidth]{imgs/trident-30-4x3-right-bot}};
+}
+\begin{frame} 
+\titlepage
+\end{frame}
+}
+
+\section{What Can Happen at a Critical Point?} 
+
+\begin{frame} 
+\frametitle{The Usual Suspects}
+
+\begin{center}
+\begin{tabular}{l | r}
+    \hline
+    jsdf & 0.23 \\
+    aaaa & 0.54
+\end{tabular}
+\end{center}
+\graybox{sdf}{sdffff}
+
+You might think that if $f'(0)=0$ (and $f$ is not a constant function) then at 
+$x=0$, $f$ must have
+\begin{itemize}
+\pause \item a local maximum, or 
+\pause \item a local minimum, or
+\end{itemize}  
+\end{frame}
+
+\begin{frame}
+\frametitle{A Counterexample}
+\alert{Consider} the function 
+\[ 
+    f(x)=
+\begin{cases} 
+x^2\sin(1/x), &\text{if }x\neq0 \\
+0, &\text{if }x=0
+\end{cases}
+\]
+\end{frame}
+
+\begin{frame}
+\frametitle{What Really Happens at $x=0$?}
+\begin{columns} 
+\begin{column}{0.5\textwidth}
+But $f(x)$ oscillates wildly as $x\to 0$, so even though $f'(0)=0$, $f$ has 
+neither max, min, nor inflection point at $x=0$.
+\end{column}
+\pause
+\begin{column}{0.5\textwidth}
+%    \includegraphics[width=5cm, height=5cm]{graph1.png}
+    \captionof{figure}{caption}
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{What Does $g'(c)>0$ Mean?} 
+\begin{frame}
+\frametitle{What Really Happens at $x=0$?}
+
+\begin{center}
+%\includegraphics[width=5cm, height=5cm]{graph2.png}
+\captionof{figure}{caption}
+\end{center}
+
+\end{frame}
+
+\section{Conclusion}
+
+{
+\usebackgroundtemplate{
+    \tikz[overlay,remember picture]
+    \node[opacity=0.05, at=(current page.south east),anchor=south east,inner sep=0pt] {
+        \includegraphics[height=\paperheight,width=\paperwidth]{imgs/trident-30-4x3-right-bot}};
+}
+\begin{frame}
+The function $f(x)$ introduced earlier has other interesting properties, 
+one of which is the fact that while $f'(0)$ exists, $f'(x)$ is 
+discontinuous at $x=0$.
+\vspace{.5cm}
+
+We leave it to you to work this out for yourself and to explore this 
+interesting function further.
+\vspace{.5cm}
+
+Thank you for your attention today.
+\end{frame}
+}
+
+\end{document}
+
